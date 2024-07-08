@@ -15,11 +15,12 @@ from fastapi import FastAPI
 from fastapi.responses import Response, FileResponse, JSONResponse
 from modules import script_callbacks, sd_hijack, shared, hashes
 from pydantic import BaseModel
+sys.path.append(str(Path(__file__).parent))
 
-from scripts.model_keyword_support import (get_lora_simple_hash,
+from model_keyword_support import (get_lora_simple_hash,
                                            load_hash_cache, update_hash_cache,
                                            write_model_keyword_path)
-from scripts.shared_paths import *
+from shared_paths import *
 
 try:
     try:
